@@ -15,7 +15,7 @@ var MAILFROMNAME = 'iot_hospital';
 var MAILTOs      = ['hoge2@example.com'];
 var MAILCCs      = [];
 var MAILSUBJECT  = 'ベッドより';
-var URL          = 'http://www.░░░░░░░░░░░░/░░░░░░░░/iot_hospital/index.html?ID02&ID01';
+var VDEVICE_URL  = 'http://www.░░░░░░░░░░░░/░░░░░░░░/iot_hospital/index.html?ID02&ID01';
 
 // Modules
 var milkcocoa = require('milkcocoa');
@@ -101,7 +101,7 @@ function doSend(idx)
     to: MAILTOs, cc: MAILCCs, from: MAILFROM, fromname: MAILFROMNAME,
     subject: MAILSUBJECT + ' (' + getDateTimeString() + ')',
     html: '<html><body><img src="cid:embedImage1"/>' +
-          '<p><a href="' + url + '?' + DEVICEID_PEER + '&' + DEVICEID_SELF +
+          '<p><a href="' + VDEVICE_URL + '?' + DEVICEID_PEER + '&' + DEVICEID_SELF +
           '">ブラウザからメッセージを送る</body></html>',
     files: [
       {
